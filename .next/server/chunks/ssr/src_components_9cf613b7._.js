@@ -230,7 +230,7 @@ const Header = ()=>{
                                                     },
                                                     className: "flex items-center justify-center w-full bg-gradient-to-r from-zennero-primary to-zennero-primary-dark text-white px-6 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300",
                                                     style: {
-                                                        background: 'linear-gradient(135deg, #ff4082 0%, #c2185b 100%)'
+                                                        background: 'linear-gradient(135deg, #ff4082 0%, #e6396f 100%)'
                                                     },
                                                     children: [
                                                         "Get Started",

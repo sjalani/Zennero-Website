@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   description: "Empowering your success with reliable tech support. Zennero specializes in data-driven IT solutions, operational optimization, and staff augmentation.",
   keywords: "IT solutions, data optimization, cloud infrastructure, staff augmentation, business technology, automation",
   authors: [{ name: "Zennero" }],
-  themeColor: "#ff4082",
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -29,6 +28,12 @@ export const metadata: Metadata = {
     description: "Innovative IT Solutions for Your Business",
   },
 };
+
+export function generateViewport() {
+  return {
+    themeColor: "#ff4082",
+  };
+}
 
 export default function RootLayout({
   children,

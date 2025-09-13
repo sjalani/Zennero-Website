@@ -1774,14 +1774,8 @@
   --zennero-primary-dark: #e6396f;
   --zennero-primary-light: #ff70a0;
   --zennero-accent: #2c3454;
+  --zennero-secondary: #36ac8b;
   --zennero-dark: #000;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

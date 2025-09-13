@@ -9,6 +9,7 @@
   --zennero-primary-dark: #e6396f;
   --zennero-primary-light: #ff70a0;
   --zennero-accent: #2c3454;
+  --zennero-secondary: #36AC8B;
   --zennero-dark: #000000;
 }
 
@@ -20,18 +21,13 @@
   --color-zennero-primary-dark: var(--zennero-primary-dark);
   --color-zennero-primary-light: var(--zennero-primary-light);
   --color-zennero-accent: var(--zennero-accent);
+  --color-zennero-secondary: var(--zennero-secondary);
   --color-zennero-dark: var(--zennero-dark);
   --font-sans: "Work Sans", system-ui, sans-serif;
   --font-serif: "Source Sans Pro", serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
