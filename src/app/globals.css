@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap') layer(fonts);
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --zennero-blue: #929ea7;
+  --zennero-primary: #ff4082;
+  --zennero-primary-dark: #e6396f;
+  --zennero-primary-light: #ff70a0;
+  --zennero-accent: #2c3454;
+  --zennero-dark: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-zennero-blue: var(--zennero-blue);
+  --color-zennero-primary: var(--zennero-primary);
+  --color-zennero-primary-dark: var(--zennero-primary-dark);
+  --color-zennero-primary-light: var(--zennero-primary-light);
+  --color-zennero-accent: var(--zennero-accent);
+  --color-zennero-dark: var(--zennero-dark);
+  --font-sans: "Work Sans", system-ui, sans-serif;
+  --font-serif: "Source Sans Pro", serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Work Sans", system-ui, sans-serif;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Optimize initial paint */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimization for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.font-work-sans {
+  font-family: "Work Sans", system-ui, sans-serif;
+}
+
+.font-source-sans {
+  font-family: "Source Sans Pro", serif;
+}
