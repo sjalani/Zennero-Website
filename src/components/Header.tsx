@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { createPortal } from 'react-dom';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,9 +49,11 @@ const Header = () => {
               {/* Drawer Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <div className="flex items-center space-x-3">
-                  <img 
+                  <Image 
                     src="/favicon.png" 
                     alt="Zennero Logo" 
+                    width={32}
+                    height={32}
                     className="h-8 w-8"
                   />
                   <h2 className="text-xl font-bold text-zennero-accent">Zennero</h2>
@@ -174,9 +177,11 @@ const Header = () => {
             className="flex-shrink-0"
           >
               <div className="flex items-center space-x-2">
-                <img 
+                <Image 
                   src="/favicon.png" 
-                  alt="Zennero Logo" 
+                  alt="Zennero Logo"
+                  width={32}
+                  height={32} 
                   className="h-8 w-8"
                 />
                 <h1 className="text-2xl font-bold text-zennero-accent">Zennero</h1>
