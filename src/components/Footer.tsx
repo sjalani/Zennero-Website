@@ -57,7 +57,7 @@ const Footer = () => {
               <div>
                 <div className="flex items-center space-x-2 mb-4">
               <Image 
-                src="/favicon.png" 
+                src="/logos/yellow/Frame.svg" 
                 alt="Zennero Logo" 
                 width={32}
                 height={32}

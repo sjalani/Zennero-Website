@@ -50,7 +50,7 @@ const Header = () => {
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <div className="flex items-center space-x-3">
                   <Image 
-                    src="/favicon.png" 
+                    src="/logos/yellow/Frame.svg" 
                     alt="Zennero Logo" 
                     width={32}
                     height={32}
@@ -178,7 +178,7 @@ const Header = () => {
           >
               <div className="flex items-center space-x-2">
                 <Image 
-                  src="/favicon.png" 
+                  src="/logos/yellow/Frame.svg" 
                   alt="Zennero Logo"
                   width={32}
                   height={32} 
