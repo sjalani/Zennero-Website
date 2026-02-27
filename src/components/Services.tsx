@@ -42,6 +42,15 @@ const Services = () => {
 
   const services = [
     {
+      icon: BarChart3,
+      title: 'Process Advisory',
+      shortDescription: 'Industry domain expertise and business process optimization.',
+      keyPoints: ['Domain knowledge', 'Process optimization', 'Strategic decisions'],
+      fullDescription: 'Deep knowledge of various industry domains and business process optimization to help you make informed strategic decisions and improve operational efficiency.',
+      features: ['Business Process Analysis', 'Strategic Consulting', 'Operational Efficiency', 'Industry Best Practices'],
+      featuresLabel: 'Advisory Services'
+    },
+    {
       icon: Users,
       title: 'Talent Acquisition for Customers',
       shortDescription: 'Staff augmentation and talent acquisition services tailored for large and medium-sized businesses.',
@@ -60,16 +69,6 @@ const Services = () => {
       detailedContent: 'Whether you specialize in process re-engineering, technical roles or project management, we have the right opportunities to match your aspirations. With flexible engagement models, you can take on projects that challenge you, providing the growth opportunities you need to thrive.',
       highlight: 'Fulfilling career paths',
       featuresLabel: 'Career Benefits'
-    },
-    {
-      icon: Bot,
-      title: 'Process Automation',
-      shortDescription: 'Automate repetitive processes using RPA tools and intelligent automation.',
-      keyPoints: ['RPA Implementation', 'Workflow Optimization', 'Cost Reduction'],
-      fullDescription: 'We automate repetitive and time-consuming processes using RPA tools such as UiPath, AA, and MS PowerApps. Streamline operations with RPA templates and intelligent automation solutions.',
-      features: ['RPA Implementation', 'Workflow Optimization', 'Cost Reduction', 'Error Prevention'],
-      techStack: ['UiPath', 'Automation Anywhere', 'MS PowerApps'],
-      featuresLabel: 'Implementation Areas'
     },
     {
       icon: Database,
@@ -91,14 +90,15 @@ const Services = () => {
       featuresLabel: 'Technology Stack'
     },
     {
-      icon: BarChart3,
-      title: 'Process Advisory',
-      shortDescription: 'Industry domain expertise and business process optimization.',
-      keyPoints: ['Domain knowledge', 'Process optimization', 'Strategic decisions'],
-      fullDescription: 'Deep knowledge of various industry domains and business process optimization to help you make informed strategic decisions and improve operational efficiency.',
-      features: ['Business Process Analysis', 'Strategic Consulting', 'Operational Efficiency', 'Industry Best Practices'],
-      featuresLabel: 'Advisory Services'
-    }
+      icon: Bot,
+      title: 'Process Automation',
+      shortDescription: 'Automate repetitive processes using RPA tools and intelligent automation.',
+      keyPoints: ['RPA Implementation', 'Workflow Optimization', 'Cost Reduction'],
+      fullDescription: 'We automate repetitive and time-consuming processes using RPA tools such as UiPath, AA, and MS PowerApps. Streamline operations with RPA templates and intelligent automation solutions.',
+      features: ['RPA Implementation', 'Workflow Optimization', 'Cost Reduction', 'Error Prevention'],
+      techStack: ['UiPath', 'Automation Anywhere', 'MS PowerApps'],
+      featuresLabel: 'Implementation Areas'
+    },
   ];
 
   const industries = [
@@ -143,8 +143,8 @@ const Services = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-3xl mx-auto font-source-sans"
           >
-            From talent acquisition to cutting-edge technology solutions, we provide 
-            comprehensive services to optimize your operations and drive business success.
+            From talent acquisition to strategic advisory, we provide 
+            comprehensive services to optimize your operations and drive business success
           </motion.p>
         </motion.div>
 

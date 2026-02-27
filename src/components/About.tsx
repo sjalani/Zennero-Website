@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Lightbulb, Cog, Cloud, Code } from 'lucide-react';
+import { Lightbulb, Bot, Sparkles, Workflow } from 'lucide-react';
 import Image from 'next/image';
 
 const About = () => {
@@ -17,19 +17,19 @@ const About = () => {
       description: 'Drive enterprise growth through strategic, business, and technology advisory across process redesign and digital transformation.',
     },
     {
-      icon: Cog,
-      title: 'RPA',
+      icon: Bot,
+      title: 'Agentic AI',
+      description: 'Design, deploy, and orchestrate autonomous AI agents that handle complex tasks and streamline business processes.',
+    },
+    {
+      icon: Sparkles,
+      title: 'Generative AI',
+      description: 'Deliver enterprise grade generative AI solutions that accelerate innovation, enhance decision making, and transform business processes at scale.',
+    },
+    {
+      icon: Workflow,
+      title: 'Process Automation',
       description: 'Streamline operations with robotic process automation templates that reduce costs and eliminate manual errors.',
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud Infrastructure',
-      description: 'Scalable cloud solutions that grow with your business and ensure maximum uptime.',
-    },
-    {
-      icon: Code,
-      title: 'API Microservices',
-      description: 'Build robust microservices architecture and seamless integrations for modern applications.',
     },
   ];
 

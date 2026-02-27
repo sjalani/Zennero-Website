@@ -65,7 +65,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-4xl mx-auto font-source-sans"
           >
-            We are here to help your business grow by providing innovative technology solutions tailored to your specific needs. 
+            We are here to help your business grow by providing strategic business advisory and technology solutions tailored to your specific needs. 
             Our team of experts is passionate about leveraging emerging technologies to drive digital transformation and organic growth in enterprise.
           </motion.p>
         </motion.div>
