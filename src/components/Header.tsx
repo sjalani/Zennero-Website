@@ -51,13 +51,12 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div className="flex items-center space-x-3">
                 <Image 
-                  src="/logos/yellow/Frame.svg" 
+                  src="/logos/ZLogo.svg" 
                   alt="Zennero Logo" 
-                  width={32}
-                  height={32}
-                  className="h-8 w-8"
+                  width={120}
+                  height={42}
+                  className="h-8 w-auto"
                 />
-                <h2 className="text-xl font-bold text-zennero-accent">Zennero</h2>
               </div>
               <motion.button
                 whileTap={{ scale: 0.9 }}
@@ -86,7 +85,7 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                     className="group flex items-center px-4 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300"
                   >
                     <div className="flex-1">
-                      <span className="text-lg font-semibold text-gray-800 group-hover:text-zennero-primary transition-colors duration-300">
+                      <span className="text-lg font-semibold text-[#1A237E] group-hover:text-zennero-primary transition-colors duration-300">
                         {item.name}
                       </span>
                     </div>
@@ -108,22 +107,14 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                 transition={{ duration: 0.3, delay: 0.6 }}
                 className="mt-8 pt-6 border-t border-gray-200"
               >
-                {/* FIX 3: Removed inline style with wrong pink color (#ff4082)
-                    Now uses the correct Zennero orange from Tailwind classes */}
                 <motion.a
                   href="#contact"
                   onClick={() => setIsMenuOpen(false)}
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center justify-center w-full bg-gradient-to-r from-zennero-primary to-zennero-primary-dark text-white px-6 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center justify-center w-full bg-zennero-primary text-white px-6 py-3 rounded-full font-medium hover:bg-zennero-primary-dark transition-all duration-300"
                 >
                   Get Started
-                  <motion.span
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    className="ml-2"
-                  >
-                    →
-                  </motion.span>
                 </motion.a>
                 
                 {/* Contact Info */}
@@ -184,13 +175,12 @@ const Header = () => {
             >
               <div className="flex items-center space-x-2">
                 <Image 
-                  src="/logos/yellow/Frame.svg" 
+                  src="/logos/ZLogo.svg" 
                   alt="Zennero Logo"
-                  width={32}
-                  height={32} 
-                  className="h-8 w-8"
+                  width={120}
+                  height={42}
+                  className="h-8 w-auto"
                 />
-                <h1 className="text-2xl font-bold text-zennero-accent">Zennero</h1>
               </div>
             </motion.div>
 
@@ -205,7 +195,7 @@ const Header = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="text-gray-900 hover:text-zennero-primary px-3 py-2 text-sm font-medium transition-colors duration-300"
+                    className="text-[#1A237E] hover:text-zennero-primary px-3 py-2 text-base font-semibold transition-colors duration-300"
                   >
                     {item.name}
                   </motion.a>
