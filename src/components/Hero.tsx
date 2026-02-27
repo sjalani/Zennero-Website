@@ -4,15 +4,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+// Defined outside component to avoid recreation on every render
+const quotes = [
+  "Your Partner for Strategy, Automation, and Innovation",
+  "Transforming Vision Into Intelligent Enterprise Solutions",
+  "Where Business Strategy Becomes Digital Reality",
+  "Guiding Strategy, Accelerating Growth",
+  "Engineering the Future of Enterprise Transformation",
+];
+
 const Hero = () => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-  
-  const quotes = [
-    "Innovative AI Solutions for Your Business",
-    "AI Innovation at its core",
-    "Process Automation using AI",
-    "Technology at its heart"
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +24,8 @@ const Hero = () => {
     }, 3500); // Change every 3.5 seconds
 
     return () => clearInterval(interval);
-  }, [quotes.length]);
+  }, []);
+
   return (
     <section
       id="home"
@@ -104,8 +107,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-source-sans"
           >
-            Empowering your success with reliable tech support, data-driven optimization, 
-            and cutting-edge solutions that transform your operations.
+            Empowering your success with actionable strategy, data-driven optimization, 
+            and cutting-edge solutions that transform your business
           </motion.p>
 
           {/* CTA Buttons */}
