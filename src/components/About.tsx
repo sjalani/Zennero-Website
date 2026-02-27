@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Bot, Cog, Cloud, Code } from 'lucide-react';
+import { Lightbulb, Cog, Cloud, Code } from 'lucide-react';
 import Image from 'next/image';
 
 const About = () => {
@@ -12,9 +12,9 @@ const About = () => {
 
   const features = [
     {
-      icon: Bot,
-      title: 'Agentic AI',
-      description: 'Design and deploy autonomous AI agents that handle complex tasks and streamline business processes.',
+      icon: Lightbulb,
+      title: 'Advisory',
+      description: 'Drive enterprise growth through strategic, business, and technology advisory across process redesign and digital transformation.',
     },
     {
       icon: Cog,
@@ -71,7 +71,7 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Empowering Business Success Through Technology
+              Empowering Business Success Through Innovation
             </h3>
             <p className="text-lg text-gray-600 font-source-sans leading-relaxed">
               In today&apos;s business landscape, utilizing data can be a powerful tool for gaining insights 
@@ -80,8 +80,8 @@ const About = () => {
             <p className="text-lg text-gray-600 font-source-sans leading-relaxed">
               At Zennero, we specialize in helping businesses optimize their operations, reduce costs, 
               and improve efficiency by leveraging the power of AI, ML, and data. With a 
-              global team of professionals focused on process innovation, technology services, and 
-              business advisory, we offer tailored solutions to meet the specific needs of businesses 
+              global team of professionals focused on business advisory, process innovation, and 
+              technology services, we offer tailored solutions to meet the specific needs of businesses 
               looking to take their operations to higher ground.
             </p>
             <motion.div
