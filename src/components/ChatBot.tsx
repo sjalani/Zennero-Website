@@ -15,6 +15,8 @@ interface Message {
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -262,13 +264,11 @@ const ChatBot = () => {
         {isOpen && (
           <>
             {isMobile ? (
-              // Mobile full-screen chat - portal to document.body
-              typeof window !== 'undefined' && createPortal(
+              mounted && createPortal(
                 <MobileChat />,
                 document.body
               )
             ) : (
-              // Desktop popup chat
               <DesktopChat />
             )}
           </>
