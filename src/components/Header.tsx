@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { createPortal } from 'react-dom';
@@ -8,6 +8,8 @@ import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -256,7 +258,7 @@ const Header = () => {
     </motion.header>
 
       {/* Portal the mobile navigation to document.body to escape stacking context */}
-      {typeof window !== 'undefined' && createPortal(
+      {mounted && createPortal(
         <MobileNavigation />,
         document.body
       )}
