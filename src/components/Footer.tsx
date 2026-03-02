@@ -16,36 +16,38 @@ const Footer = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  // Updated services list — static text, no links
   const services = [
-    { name: 'Cloud Infrastructure', href: '#services' },
-    { name: 'Data Analytics', href: '#services' },
-    { name: 'Staff Augmentation', href: '#services' },
-    { name: 'Process Automation', href: '#services' },
-    { name: 'API Development', href: '#services' },
-    { name: 'Technical Support', href: '#services' },
+    'Process Advisory',
+    'Talent Acquisition for Customers',
+    'Connecting People to Customers',
+    'SAP Implementation and Support',
+    'Technology Services',
+    'Process Automation',
   ];
 
+  // Updated industries list — static text, no links, & → and, CPG/Healthcare/Financial removed
   const industries = [
-    { name: 'Financial Services', href: '#services' },
-    { name: 'Healthcare', href: '#services' },
-    { name: 'Manufacturing', href: '#services' },
-    { name: 'Oil & Gas', href: '#services' },
-    { name: 'CPG & Retail', href: '#services' },
-    { name: 'Pharma', href: '#services' },
+    'Retail',
+    'Manufacturing',
+    'Oil and Gas',
+    'Pharma',
   ];
 
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden">
+    // Background changed from bg-gray-900 → navy #1A237E
+    <footer className="bg-[#1A237E] text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-zennero-primary/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-zennero-primary/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10">
         {/* Main footer content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
             {/* Company Info */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -55,68 +57,71 @@ const Footer = () => {
               className="space-y-6"
             >
               <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <Image 
-                    src="/logos/yellow/Frame.svg" 
-                    alt="Zennero Logo" 
-                    width={32}
-                    height={32}
-                    className="h-8 w-8"
+                {/* Logo row: ZLogo_Orange.png icon + ZLogo_White_Text.png wordmark */}
+                <div className="flex items-center space-x-3 mb-4">
+                  <Image
+                    src="/logos/ZLogo_Orange.png"
+                    alt="Zennero icon"
+                    width={56}
+                    height={56}
+                    className="h-12 w-auto"
                   />
-                  <h3 className="text-2xl font-bold text-white">Zennero</h3>
+                  <Image
+                    src="/logos/ZLogo_White_Text.png"
+                    alt="Zennero"
+                    width={160}
+                    height={56}
+                    className="h-10 w-auto"
+                  />
                 </div>
-                <p className="text-gray-300 leading-relaxed font-source-sans">
-                  Empowering your success with reliable tech support and innovative IT solutions 
-                  that transform business operations.
+                {/* Updated description text — no period at end */}
+                <p className="text-white/80 leading-relaxed font-source-sans">
+                  Empowering your success with actionable strategy, data-driven optimization, and cutting-edge solutions that transform your business
                 </p>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail size={16} className="text-zennero-primary" />
                   <a
                     href="mailto:info@zennero.com"
-                    className="text-gray-300 hover:text-white transition-colors duration-300"
+                    className="text-white/80 hover:text-white transition-colors duration-300"
                   >
                     info@zennero.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone size={16} className="text-zennero-primary" />
-                  {/* FIX: Changed href from placeholder +15551234567 to correct number */}
                   <a
                     href="tel:+19728005552"
-                    className="text-gray-300 hover:text-white transition-colors duration-300"
+                    className="text-white/80 hover:text-white transition-colors duration-300"
                   >
                     +1 (972) 800-5552
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin size={16} className="text-zennero-primary" />
-                  <span className="text-gray-300">605 Saint James Pl, Coppell, TX 75019</span>
+                  <span className="text-white/80">605 Saint James Pl, Coppell, TX 75019</span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Quick Links */}
+            {/* Quick Links — still navigational */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                      className="text-white/80 hover:text-white transition-colors duration-300 flex items-center group"
                     >
-                      <motion.span
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
+                      <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                         {link.name}
                       </motion.span>
                     </a>
@@ -125,45 +130,35 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Services */}
+            {/* Services — static list, no links, no cursor-pointer */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6">Services</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Services</h4>
               <ul className="space-y-3">
                 {services.map((service) => (
-                  <li key={service.name}>
-                    <a
-                      href={service.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 text-sm"
-                    >
-                      {service.name}
-                    </a>
+                  <li key={service}>
+                    <span className="text-white/80 text-sm">{service}</span>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* Industries */}
+            {/* Industries — static list, no links, no cursor-pointer */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6">Industries</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Industries</h4>
               <ul className="space-y-3">
                 {industries.map((industry) => (
-                  <li key={industry.name}>
-                    <a
-                      href={industry.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 text-sm"
-                    >
-                      {industry.name}
-                    </a>
+                  <li key={industry}>
+                    <span className="text-white/80 text-sm">{industry}</span>
                   </li>
                 ))}
               </ul>
@@ -172,7 +167,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-800">
+        <div className="border-t border-white/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <motion.div
@@ -180,34 +175,34 @@ const Footer = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-gray-400 text-sm"
+                className="text-white/60 text-sm"
               >
                 © {new Date().getFullYear()} Zennero. All rights reserved.
               </motion.div>
-              
+
               <div className="flex items-center space-x-6">
-                <motion.a
-                  href="#"
+                {/* Privacy Policy — static text, no link */}
+                <motion.span
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                  className="text-white/60 text-sm"
                 >
                   Privacy Policy
-                </motion.a>
-                <motion.a
-                  href="#"
+                </motion.span>
+                {/* Terms of Service — static text, no link */}
+                <motion.span
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                  className="text-white/60 text-sm"
                 >
                   Terms of Service
-                </motion.a>
-                
-                {/* Scroll to top button */}
+                </motion.span>
+
+                {/* Scroll to top */}
                 <motion.button
                   onClick={scrollToTop}
                   initial={{ opacity: 0 }}
@@ -216,7 +211,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="bg-zennero-primary/20 hover:bg-zennero-primary/30 p-2 rounded-full transition-all duration-300"
+                  className="bg-zennero-primary/30 hover:bg-zennero-primary/50 p-2 rounded-full transition-all duration-300 cursor-pointer"
                   aria-label="Scroll to top"
                 >
                   <ArrowUp size={16} className="text-zennero-primary" />

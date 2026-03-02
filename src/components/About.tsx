@@ -1,14 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Lightbulb, Bot, Sparkles, Workflow } from 'lucide-react';
 import Image from 'next/image';
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const features = [
     {
@@ -46,11 +45,12 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
+          {/* "Who We Are" — black heading → navy */}
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A237E] mb-6"
           >
             Who We Are
           </motion.h2>
@@ -70,18 +70,20 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            {/* "Empowering Business..." — black heading → navy */}
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#1A237E]">
               Empowering Business Success Through Innovation
             </h3>
+            {/* Body paragraphs — gray text unchanged */}
             <p className="text-lg text-gray-600 font-source-sans leading-relaxed">
-              In today&apos;s business landscape, utilizing data can be a powerful tool for gaining insights 
+              In today&apos;s business landscape, utilizing data can be a powerful tool for gaining insights
               and making informed decisions that can help take operations to the next level.
             </p>
             <p className="text-lg text-gray-600 font-source-sans leading-relaxed">
-              At Zennero, we specialize in helping businesses optimize their operations, reduce costs, 
-              and improve efficiency by leveraging the power of AI, ML, and data. With a 
-              global team of professionals focused on business advisory, process innovation, and 
-              technology services, we offer tailored solutions to meet the specific needs of businesses 
+              At Zennero, we specialize in helping businesses optimize their operations, reduce costs,
+              and improve efficiency by leveraging the power of AI, ML, and data. With a
+              global team of professionals focused on business advisory, process innovation, and
+              technology services, we offer tailored solutions to meet the specific needs of businesses
               looking to take their operations to higher ground.
             </p>
             <motion.div
@@ -98,7 +100,7 @@ const About = () => {
             </motion.div>
           </motion.div>
 
-          {/* Visual Element */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
@@ -134,13 +136,15 @@ const About = () => {
                 className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
                 <div className="mb-4">
-                                  <div className="w-12 h-12 bg-zennero-primary/10 rounded-lg flex items-center justify-center">
-                  <Icon size={24} className="text-zennero-primary" />
+                  <div className="w-12 h-12 bg-zennero-primary/10 rounded-lg flex items-center justify-center">
+                    <Icon size={24} className="text-zennero-primary" />
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                {/* Card title — black heading → navy */}
+                <h4 className="text-lg font-semibold text-[#1A237E] mb-2">
                   {feature.title}
                 </h4>
+                {/* Card description — gray text unchanged */}
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {feature.description}
                 </p>

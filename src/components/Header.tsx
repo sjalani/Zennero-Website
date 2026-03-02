@@ -13,8 +13,6 @@ const navItems = [
   { name: 'Contact', href: '#contact' },
 ];
 
-// FIX 1: Moved MobileNavigation OUTSIDE of Header component
-// FIX 2: Now receives props instead of closing over Header's state
 const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
   isMenuOpen: boolean;
   setIsMenuOpen: (value: boolean) => void;
@@ -31,37 +29,30 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
           className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[9998] md:hidden"
           onClick={() => setIsMenuOpen(false)}
         />
-        
-        {/* Mobile Drawer - Solid and Readable */}
+
+        {/* Mobile Drawer */}
         <motion.div
           initial={{ x: '100%', opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: '100%', opacity: 0 }}
-          transition={{ 
-            type: 'spring', 
-            stiffness: 300, 
-            damping: 30,
-            duration: 0.4 
-          }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30, duration: 0.4 }}
           className="fixed top-0 right-0 h-full w-80 max-w-[85vw] z-[9999] md:hidden overflow-hidden bg-white shadow-2xl"
         >
-          {/* Drawer Container */}
           <div className="flex flex-col h-full">
             {/* Drawer Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <div className="flex items-center space-x-3">
-                <Image 
-                  src="/logos/ZLogo.svg" 
-                  alt="Zennero Logo" 
-                  width={120}
-                  height={42}
-                  className="h-8 w-auto"
-                />
-              </div>
+              <Image
+                src="/logos/ZLogo_Orange_Text_Side.png"
+                alt="Zennero Logo"
+                width={180}
+                height={63}
+                className="h-10 w-auto"
+              />
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsMenuOpen(false)}
-                className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 bg-gray-50"
+                aria-label="Close menu"
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 bg-gray-50 cursor-pointer"
               >
                 <X size={24} className="text-gray-700" />
               </motion.button>
@@ -76,16 +67,12 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                     href={item.href}
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ 
-                      duration: 0.3, 
-                      delay: index * 0.1 + 0.2,
-                      ease: 'easeOut'
-                    }}
+                    transition={{ duration: 0.3, delay: index * 0.1 + 0.2, ease: 'easeOut' }}
                     onClick={() => setIsMenuOpen(false)}
                     className="group flex items-center px-4 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300"
                   >
                     <div className="flex-1">
-                      <span className="text-lg font-semibold text-[#1A237E] group-hover:text-zennero-primary transition-colors duration-300">
+                      <span className="text-xl font-semibold text-[#1A237E] group-hover:text-zennero-primary transition-colors duration-300">
                         {item.name}
                       </span>
                     </div>
@@ -100,7 +87,7 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                 ))}
               </nav>
 
-              {/* Call-to-Action Section */}
+              {/* Call-to-Action */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -112,12 +99,10 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                   onClick={() => setIsMenuOpen(false)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center w-full bg-zennero-primary text-white px-6 py-3 rounded-full font-medium hover:bg-zennero-primary-dark transition-all duration-300"
+                  className="flex items-center justify-center w-full bg-zennero-primary text-white px-6 py-3 rounded-full font-medium hover:bg-zennero-primary-dark transition-all duration-300 cursor-pointer"
                 >
                   Get Started
                 </motion.a>
-                
-                {/* Contact Info */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -130,8 +115,8 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
               </motion.div>
             </div>
 
-            {/* Bottom Decoration */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-zennero-primary via-pink-400 to-zennero-primary opacity-60" />
+            {/* Bottom Decoration — brand orange only, no pink */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-zennero-primary opacity-60" />
           </div>
         </motion.div>
       </>
@@ -141,7 +126,6 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // FIX 4: Added mounted state to prevent hydration mismatch with createPortal
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -150,7 +134,7 @@ const Header = () => {
       <motion.header
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
         className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[80%] max-w-6xl backdrop-blur-2xl rounded-3xl border border-white/20"
         style={{
           background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%)',
@@ -167,24 +151,20 @@ const Header = () => {
         }}
       >
         <nav className="px-6 sm:px-8 lg:px-10">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0"
-            >
-              <div className="flex items-center space-x-2">
-                <Image 
-                  src="/logos/ZLogo.svg" 
-                  alt="Zennero Logo"
-                  width={120}
-                  height={42}
-                  className="h-8 w-auto"
-                />
-              </div>
+          <div className="flex justify-between items-center h-20">
+
+            {/* Logo — bigger */}
+            <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
+              <Image
+                src="/logos/ZLogo_Orange_Text_Side.png"
+                alt="Zennero Logo"
+                width={220}
+                height={77}
+                className="h-12 w-auto"
+              />
             </motion.div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation — text-lg (bumped up) */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
                 {navItems.map((item, index) => (
@@ -195,7 +175,7 @@ const Header = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="text-[#1A237E] hover:text-zennero-primary px-3 py-2 text-base font-semibold transition-colors duration-300"
+                    className="text-[#1A237E] hover:text-zennero-primary px-3 py-2 text-lg font-semibold transition-colors duration-300"
                   >
                     {item.name}
                   </motion.a>
@@ -203,7 +183,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Get Started Button - Desktop */}
+            {/* Get Started Button */}
             <motion.div
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
@@ -214,7 +194,7 @@ const Header = () => {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-zennero-primary text-white px-6 py-2 rounded-full font-medium hover:bg-zennero-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-zennero-primary text-white px-6 py-2 rounded-full font-medium hover:bg-zennero-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
               >
                 Get Started
               </motion.a>
@@ -226,18 +206,15 @@ const Header = () => {
                 whileTap={{ scale: 0.9 }}
                 whileHover={{ scale: 1.05 }}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="relative p-3 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 focus:outline-none transition-all duration-300"
-                style={{
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
-                }}
+                aria-label="Open menu"
+                className="relative p-3 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 focus:outline-none transition-all duration-300 cursor-pointer"
+                style={{ boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)' }}
               >
                 {isMenuOpen ? (
                   <X size={24} className="text-gray-700" />
                 ) : (
                   <Menu size={24} className="text-gray-700" />
                 )}
-                
-                {/* Active indicator */}
                 {isMenuOpen && (
                   <motion.div
                     initial={{ scale: 0 }}
@@ -247,17 +224,13 @@ const Header = () => {
                 )}
               </motion.button>
             </div>
+
           </div>
         </nav>
       </motion.header>
 
-      {/* FIX 4: Use mounted state instead of typeof window check
-          This prevents hydration mismatch between server and client render */}
       {mounted && createPortal(
-        <MobileNavigation
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        />,
+        <MobileNavigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />,
         document.body
       )}
     </>

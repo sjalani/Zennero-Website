@@ -1,37 +1,44 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Zennero - Innovative IT Solutions for Your Business",
-  description: "Empowering your success with reliable tech support. Zennero specializes in data-driven IT solutions, operational optimization, and staff augmentation.",
-  keywords: "IT solutions, data optimization, cloud infrastructure, staff augmentation, business technology, automation",
-  authors: [{ name: "Zennero" }],
+  title: 'Zennero - Strategy, Automation and Innovation',
+  description: 'Empowering enterprise success through strategic advisory, agentic AI, generative AI, and intelligent process automation. Zennero transforms your business with data-driven solutions.',
+  keywords: 'business advisory, process automation, agentic AI, generative AI, SAP implementation, digital transformation, talent acquisition, technology services, enterprise solutions',
+  authors: [{ name: 'Zennero' }],
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.png', sizes: '48x48', type: 'image/png' },
+      { url: '/logos/ZLogo_Orange.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/logos/ZLogo_Orange.png', type: 'image/png' },
     ],
+    shortcut: '/logos/ZLogo_Orange.png',
   },
   openGraph: {
-    title: "Zennero - Innovative IT Solutions for Your Business",
-    description: "Empowering your success with reliable tech support",
-    type: "website",
-    locale: "en_US",
+    title: 'Zennero - Strategy, Automation and Innovation',
+    description: 'Empowering enterprise success through strategic advisory, agentic AI, and intelligent process automation.',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/logos/ZLogo_Orange_Text_Side.png',
+        width: 1200,
+        height: 420,
+        alt: 'Zennero',
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Zennero - Innovative IT Solutions for Your Business",
-    description: "Innovative IT Solutions for Your Business",
+    card: 'summary',
+    title: 'Zennero - Strategy, Automation and Innovation',
+    description: 'Empowering enterprise success through strategic advisory, agentic AI, and intelligent process automation.',
   },
 };
 
 export function generateViewport() {
   return {
-    themeColor: "#FF9B29",
+    themeColor: '#FF9B29',
   };
 }
 

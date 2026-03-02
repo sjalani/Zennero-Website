@@ -1,15 +1,13 @@
 'use client';
 
-// Updated: 2025-07-11 - Fixed spacing, modal issues, and industry cards 2:1 ratio
-import { motion, AnimatePresence } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { 
-  Users, 
-  Network, 
-  Bot, 
-  Database, 
-  Code, 
+import {
+  Users,
+  Network,
+  Bot,
+  Database,
+  Code,
   BarChart3,
   Factory,
   Fuel,
@@ -18,10 +16,9 @@ import {
   ArrowRight,
   CheckCircle,
   X,
-  LucideIcon
+  LucideIcon,
 } from 'lucide-react';
 
-// Define the service type
 type ServiceType = {
   icon: LucideIcon;
   title: string;
@@ -37,10 +34,10 @@ type ServiceType = {
 
 const Services = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [selectedService, setSelectedService] = useState<ServiceType | null>(null);
 
-  const services = [
+  const services: ServiceType[] = [
     {
       icon: BarChart3,
       title: 'Process Advisory',
@@ -48,17 +45,17 @@ const Services = () => {
       keyPoints: ['Domain knowledge', 'Process optimization', 'Strategic decisions'],
       fullDescription: 'Deep knowledge of various industry domains and business process optimization to help you make informed strategic decisions and improve operational efficiency.',
       features: ['Business Process Analysis', 'Strategic Consulting', 'Operational Efficiency', 'Industry Best Practices'],
-      featuresLabel: 'Advisory Services'
+      featuresLabel: 'Advisory Services',
     },
     {
       icon: Users,
       title: 'Talent Acquisition for Customers',
       shortDescription: 'Staff augmentation and talent acquisition services tailored for large and medium-sized businesses.',
-      keyPoints: ['Skilled professionals', 'Seamless integration', 'Precision & efficiency'],
+      keyPoints: ['Skilled professionals', 'Seamless integration', 'Precision and efficiency'],
       fullDescription: 'At Zennero, we excel in staff augmentation and talent acquisition services, tailored to meet the unique needs of large and medium-sized businesses. Our expertise lies in providing highly skilled professionals who seamlessly integrate into your team, ensuring that your projects are executed with precision and efficiency.',
       detailedContent: 'Whether you need specialized process expert, technical talent, project managers, or creative skills, we have the resources to fill your skill gaps quickly and effectively. Our rigorous vetting process ensures that every candidate not only possesses the required skills but also aligns with your company culture and values. With our flexible engagement models, you can scale your team, optimize your workforce, and drive your business forward. Trust us to provide the talent you need to succeed.',
       highlight: 'Seamlessly integrate into your team',
-      featuresLabel: 'Our Approach'
+      featuresLabel: 'Our Approach',
     },
     {
       icon: Network,
@@ -68,26 +65,31 @@ const Services = () => {
       fullDescription: 'At Zennero, we connect top-tier professionals with exciting opportunities at large and medium-sized businesses. Our staff augmentation and talent acquisition services are designed to offer you a fulfilling career path, where your skills and expertise are highly valued.',
       detailedContent: 'Whether you specialize in process re-engineering, technical roles or project management, we have the right opportunities to match your aspirations. With flexible engagement models, you can take on projects that challenge you, providing the growth opportunities you need to thrive.',
       highlight: 'Fulfilling career paths',
-      featuresLabel: 'Career Benefits'
+      featuresLabel: 'Career Benefits',
     },
     {
       icon: Database,
-      title: 'SAP Implementation & Support',
+      // & → and in title
+      title: 'SAP Implementation and Support',
       shortDescription: 'Expert implementation and support for SAP systems across industries.',
       keyPoints: ['SAP S/4 HANA', 'Industry expertise', 'Clean Core Concept'],
-      fullDescription: 'Expertise in implementing and supporting SAP systems such as SAP S/4 HANA, BTP, SAP Business Cloud, Fiori, RISE and GROW, Clean Core Concept. We are industries experts such as Retail, CAR, Oil & Gas, CPG, and Pharma.',
-      features: ['SAP Implementation', 'System Support & Maintenance', 'Industry-Specific Solutions', 'Clean Core Migration'],
-      techStack: ['SAP S/4 HANA', 'BTP', 'SAP Business Cloud', 'Fiori', 'RISE & GROW'],
-      featuresLabel: 'SAP Capabilities'
+      // Updated fullDescription per change request
+      fullDescription: 'Expertise in implementing and supporting SAP systems such as SAP S/4 HANA, BTP, SAP Business Cloud, Fiori, RISE and GROW, Clean Core Concept. We have senior level experts in industries such as Retail, CAR, Oil and Gas, and Pharma',
+      // & → and in features
+      features: ['SAP Implementation', 'System Support and Maintenance', 'Industry-Specific Solutions', 'Clean Core Migration'],
+      // & → and in techStack
+      techStack: ['SAP S/4 HANA', 'BTP', 'SAP Business Cloud', 'Fiori', 'RISE and GROW'],
+      featuresLabel: 'SAP Capabilities',
     },
     {
       icon: Code,
       title: 'Technology Services',
       shortDescription: 'Cutting-edge technology solutions for digital transformation.',
-      keyPoints: ['AI & ML', 'API Development', 'Cloud & Blockchain'],
+      // & → and in keyPoints
+      keyPoints: ['AI and ML', 'API Development', 'Cloud and Blockchain'],
       fullDescription: 'Comprehensive technology services to drive your digital transformation with modern solutions.',
       features: ['AI, ML, LLMs, GenAI', 'API Development Microservices', 'Cloud', 'Blockchain'],
-      featuresLabel: 'Technology Stack'
+      featuresLabel: 'Technology Stack',
     },
     {
       icon: Bot,
@@ -97,25 +99,22 @@ const Services = () => {
       fullDescription: 'We automate repetitive and time-consuming processes using RPA tools such as UiPath, AA, and MS PowerApps. Streamline operations with RPA templates and intelligent automation solutions.',
       features: ['RPA Implementation', 'Workflow Optimization', 'Cost Reduction', 'Error Prevention'],
       techStack: ['UiPath', 'Automation Anywhere', 'MS PowerApps'],
-      featuresLabel: 'Implementation Areas'
+      featuresLabel: 'Implementation Areas',
     },
   ];
 
+  // CPG removed; Oil & Gas → Oil and Gas
   const industries = [
     { icon: ShoppingCart, name: 'Retail', color: 'bg-green-100 text-green-600' },
     { icon: Factory, name: 'Manufacturing', color: 'bg-gray-100 text-gray-600' },
-    { icon: Fuel, name: 'Oil & Gas', color: 'bg-orange-100 text-orange-600' },
-    { icon: ShoppingCart, name: 'CPG', color: 'bg-green-100 text-green-600' },
-    { icon: Pill, name: 'Pharma', color: 'bg-purple-100 text-purple-600' }
+    { icon: Fuel, name: 'Oil and Gas', color: 'bg-orange-100 text-orange-600' },
+    { icon: Pill, name: 'Pharma', color: 'bg-purple-100 text-purple-600' },
   ];
 
   return (
-    <section
-      id="services"
-      ref={ref}
-      className="py-20 bg-white"
-    >
+    <section id="services" ref={ref} className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -123,11 +122,12 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
+          {/* "Our Services" — black heading → navy */}
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A237E] mb-6"
           >
             Our Services
           </motion.h2>
@@ -137,13 +137,14 @@ const Services = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="h-1 bg-zennero-primary mx-auto mb-8"
           />
+          {/* Subtitle — gray text unchanged */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-3xl mx-auto font-source-sans"
           >
-            From talent acquisition to strategic advisory, we provide 
+            From talent acquisition to strategic advisory, we provide
             comprehensive services to optimize your operations and drive business success
           </motion.p>
         </motion.div>
@@ -157,7 +158,6 @@ const Services = () => {
         >
           {services.map((service, index) => {
             const Icon = service.icon;
-            
             return (
               <motion.div
                 key={service.title}
@@ -165,34 +165,42 @@ const Services = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-zennero-primary/20 cursor-pointer h-full flex flex-col"
+                // cursor-pointer removed from card — card is not a clickable link
+                className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-zennero-primary/20 h-full flex flex-col"
               >
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-zennero-primary/10 rounded-xl flex items-center justify-center group-hover:bg-zennero-primary/20 transition-colors duration-300">
                     <Icon size={24} className="text-zennero-primary" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-zennero-primary transition-colors duration-300" style={{ marginLeft: '2rem' }}>
+                  {/* Card title — black heading → navy */}
+                  <h3
+                    className="text-lg font-bold text-[#1A237E] group-hover:text-zennero-primary transition-colors duration-300 ml-8"
+                  >
                     {service.title}
                   </h3>
                 </div>
-                
+
+                {/* Short description — gray text unchanged */}
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm flex-grow">
                   {service.shortDescription}
                 </p>
-                
+
+                {/* Key points — gray text unchanged */}
                 <ul className="space-y-2 mb-6">
-                  {service.keyPoints.map((point, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-600">
+                  {service.keyPoints.map((point) => (
+                    <li key={point} className="flex items-center text-sm text-gray-600">
                       <div className="w-1.5 h-1.5 bg-zennero-primary rounded-full mr-3 flex-shrink-0" />
                       {point}
                     </li>
                   ))}
                 </ul>
-                
+
+                {/* Learn More — cursor-pointer HERE (not on whole card) */}
                 <motion.button
                   whileHover={{ x: 5 }}
                   onClick={() => setSelectedService(service)}
-                  className="flex items-center text-zennero-primary font-semibold mt-auto"
+                  aria-label={`Learn more about ${service.title}`}
+                  className="flex items-center text-zennero-primary font-semibold mt-auto cursor-pointer"
                 >
                   Learn More
                   <ArrowRight size={16} className="ml-2" />
@@ -209,7 +217,8 @@ const Services = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center"
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          {/* "Industry Expertise" — black heading → navy */}
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#1A237E] mb-8">
             Industry Expertise
           </h3>
           <div className="flex flex-wrap justify-center gap-6">
@@ -228,7 +237,8 @@ const Services = () => {
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 ${industry.color}`}>
                     <Icon size={24} />
                   </div>
-                  <span className="text-sm font-medium text-gray-900 text-center">
+                  {/* Industry name — black heading → navy */}
+                  <span className="text-sm font-medium text-[#1A237E] text-center">
                     {industry.name}
                   </span>
                 </motion.div>
@@ -238,7 +248,7 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {/* Modal for Service Details */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedService && (
           <motion.div
@@ -262,8 +272,9 @@ const Services = () => {
                     <div className="w-16 h-16 bg-zennero-primary/10 rounded-2xl flex items-center justify-center">
                       <selectedService.icon size={32} className="text-zennero-primary" />
                     </div>
-                    <div style={{ marginLeft: '2rem' }}>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <div className="ml-8">
+                      {/* Modal title — black heading → navy */}
+                      <h3 className="text-2xl font-bold text-[#1A237E] mb-2">
                         {selectedService.title}
                       </h3>
                       {selectedService.highlight && (
@@ -273,12 +284,13 @@ const Services = () => {
                       )}
                     </div>
                   </div>
+                  {/* Close button — cursor-pointer added */}
                   <motion.button
                     whileHover={{ backgroundColor: '#f3f4f6', scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedService(null)}
-                    className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex-shrink-0"
-                    style={{ width: '40px', height: '40px', borderRadius: '50%' }}
+                    aria-label="Close"
+                    className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex-shrink-0 cursor-pointer"
                   >
                     <X size={20} className="text-gray-500" />
                   </motion.button>
@@ -286,6 +298,7 @@ const Services = () => {
 
                 {/* Modal Content */}
                 <div className="space-y-6">
+                  {/* Body paragraphs — gray text unchanged */}
                   <p className="text-gray-700 leading-relaxed">
                     {selectedService.fullDescription}
                   </p>
@@ -298,10 +311,13 @@ const Services = () => {
 
                   {selectedService.features && (
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">{selectedService.featuresLabel || 'Key Features'}</h4>
+                      {/* Section subheading — black heading → navy */}
+                      <h4 className="text-lg font-semibold text-[#1A237E] mb-3">
+                        {selectedService.featuresLabel || 'Key Features'}
+                      </h4>
                       <ul className="space-y-2">
-                        {selectedService.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-700">
+                        {selectedService.features.map((feature) => (
+                          <li key={feature} className="flex items-center text-gray-700">
                             <CheckCircle size={18} className="text-zennero-primary mr-3 flex-shrink-0" />
                             {feature}
                           </li>
@@ -312,10 +328,11 @@ const Services = () => {
 
                   {selectedService.techStack && (
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Technologies</h4>
+                      {/* "Technologies" subheading — black heading → navy */}
+                      <h4 className="text-lg font-semibold text-[#1A237E] mb-3">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedService.techStack.map((tech, idx) => (
-                          <span key={idx} className="bg-zennero-primary/10 text-zennero-primary px-3 py-1 rounded-lg text-sm font-medium">
+                        {selectedService.techStack.map((tech) => (
+                          <span key={tech} className="bg-zennero-primary/10 text-zennero-primary px-3 py-1 rounded-lg text-sm font-medium">
                             {tech}
                           </span>
                         ))}
@@ -324,10 +341,11 @@ const Services = () => {
                   )}
 
                   <div className="pt-4 border-t border-gray-200">
+                    {/* "Get Started" button — hover dark orange (not pink), cursor-pointer */}
                     <motion.button
-                      whileHover={{ backgroundColor: '#e6396f' }}
+                      whileHover={{ backgroundColor: '#e6821a' }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full bg-zennero-primary text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300"
+                      className="w-full bg-zennero-primary text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 cursor-pointer"
                       onClick={() => {
                         setSelectedService(null);
                         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
