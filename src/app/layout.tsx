@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Zennero - Strategy, Automation and Innovation',
+  title: 'Zennero',
   description: 'Empowering enterprise success through strategic advisory, agentic AI, generative AI, and intelligent process automation. Zennero transforms your business with data-driven solutions.',
   keywords: 'business advisory, process automation, agentic AI, generative AI, SAP implementation, digital transformation, talent acquisition, technology services, enterprise solutions',
   authors: [{ name: 'Zennero' }],
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     shortcut: '/logos/ZLogo_Orange.png',
   },
   openGraph: {
-    title: 'Zennero - Strategy, Automation and Innovation',
+    title: 'Zennero',
     description: 'Empowering enterprise success through strategic advisory, agentic AI, and intelligent process automation.',
     type: 'website',
     locale: 'en_US',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Zennero - Strategy, Automation and Innovation',
+    title: 'Zennero',
     description: 'Empowering enterprise success through strategic advisory, agentic AI, and intelligent process automation.',
   },
 };

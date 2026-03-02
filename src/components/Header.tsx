@@ -46,7 +46,7 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                 alt="Zennero Logo"
                 width={180}
                 height={63}
-                className="h-10 w-auto"
+                className="h-14 w-auto"
               />
               <motion.button
                 whileTap={{ scale: 0.9 }}
@@ -160,7 +160,7 @@ const Header = () => {
                 alt="Zennero Logo"
                 width={220}
                 height={77}
-                className="h-12 w-auto"
+                className="h-14 w-auto"
               />
             </motion.div>
 
