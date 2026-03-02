@@ -64,14 +64,14 @@ const Footer = () => {
                     alt="Zennero icon"
                     width={56}
                     height={56}
-                    className="h-10 w-auto"
+                    className="h-14 w-auto"
                   />
                   <Image
                     src="/logos/ZLogo_White_Text.png"
                     alt="Zennero"
                     width={160}
                     height={56}
-                    className="h-7 w-auto"
+                    className="h-5 w-auto"
                   />
                 </div>
                 {/* Updated description text — no period at end */}
