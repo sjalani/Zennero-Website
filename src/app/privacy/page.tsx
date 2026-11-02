@@ -52,7 +52,6 @@ export default function PrivacyPolicy() {
         <p>We use the information you share to:</p>
         <ul>
           <li>Reply to your questions and requests</li>
-          <li>Send you occasional emails about our services. Every marketing email includes a way to unsubscribe.</li>
           <li>Discuss, deliver, and improve our services</li>
           <li>Keep the website running and secure</li>
           <li>Meet our legal, tax, and accounting duties</li>
@@ -96,8 +95,8 @@ export default function PrivacyPolicy() {
 
       <LegalSection title="10. Your choices and rights">
         <p>
-          You can leave our mailing list at any time. Use the unsubscribe link in any marketing email, or email{' '}
-          <a href="mailto:info@zennero.com">info@zennero.com</a>. We will process your request within 10 business days.
+          You can ask us to remove you from our mailing list at any time. Email{' '}
+          <a href="mailto:info@zennero.com">info@zennero.com</a>, and we will process your request within 10 business days.
           You can also ask us what personal information we hold about you, and ask us to correct or delete it. Depending
           on where you live, privacy laws may give you more rights. We will not treat you differently for using them.
         </p>
