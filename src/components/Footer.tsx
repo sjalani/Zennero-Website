@@ -10,10 +10,10 @@ const Footer = () => {
   };
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   // Updated services list — static text, no links
@@ -181,26 +181,28 @@ const Footer = () => {
               </motion.div>
 
               <div className="flex items-center space-x-6">
-                {/* Privacy Policy — static text, no link */}
-                <motion.span
+                {/* Privacy Policy page link */}
+                <motion.a
+                  href="/privacy/"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="text-white/60 text-sm"
+                  className="text-white/60 hover:text-white text-sm transition-colors duration-300"
                 >
                   Privacy Policy
-                </motion.span>
-                {/* Terms of Service — static text, no link */}
-                <motion.span
+                </motion.a>
+                {/* Terms of Service page link */}
+                <motion.a
+                  href="/terms/"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="text-white/60 text-sm"
+                  className="text-white/60 hover:text-white text-sm transition-colors duration-300"
                 >
                   Terms of Service
-                </motion.span>
+                </motion.a>
 
                 {/* Scroll to top */}
                 <motion.button

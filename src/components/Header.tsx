@@ -7,10 +7,10 @@ import { createPortal } from 'react-dom';
 import Image from 'next/image';
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/#home' },
+  { name: 'About', href: '/#about' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
@@ -41,13 +41,22 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
           <div className="flex flex-col h-full">
             {/* Drawer Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <Image
-                src="/logos/ZLogo_Orange_Text_Side.png"
-                alt="Zennero Logo"
-                width={180}
-                height={63}
-                className="h-14 w-auto"
-              />
+              {/* Plain link on purpose: same native scroll as the menu links. */}
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a
+                href="/#home"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Zennero, go to Home"
+                className="block"
+              >
+                <Image
+                  src="/logos/ZLogo_Orange_Text_Side.png"
+                  alt="Zennero Logo"
+                  width={180}
+                  height={63}
+                  className="h-14 w-auto"
+                />
+              </a>
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsMenuOpen(false)}
@@ -95,7 +104,7 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                 className="mt-8 pt-6 border-t border-gray-200"
               >
                 <motion.a
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setIsMenuOpen(false)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -153,15 +162,19 @@ const Header = () => {
         <nav className="px-6 sm:px-8 lg:px-10">
           <div className="flex justify-between items-center h-20">
 
-            {/* Logo — bigger */}
+            {/* Logo, links to Home from any page */}
             <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
-              <Image
-                src="/logos/ZLogo_Orange_Text_Side.png"
-                alt="Zennero Logo"
-                width={220}
-                height={77}
-                className="h-14 w-auto"
-              />
+              {/* Plain link on purpose: same native scroll as the menu links. */}
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a href="/#home" aria-label="Zennero, go to Home" className="block">
+                <Image
+                  src="/logos/ZLogo_Orange_Text_Side.png"
+                  alt="Zennero Logo"
+                  width={220}
+                  height={77}
+                  className="h-14 w-auto"
+                />
+              </a>
             </motion.div>
 
             {/* Desktop Navigation — text-lg (bumped up) */}
@@ -191,7 +204,7 @@ const Header = () => {
               className="hidden md:block"
             >
               <motion.a
-                href="#contact"
+                href="/#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-zennero-primary text-white px-6 py-2 rounded-full font-medium hover:bg-zennero-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
