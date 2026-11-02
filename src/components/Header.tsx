@@ -109,8 +109,8 @@ const MobileNavigation = ({ isMenuOpen, setIsMenuOpen }: {
                   transition={{ duration: 0.3, delay: 0.8 }}
                   className="mt-6 text-center"
                 >
-                  <p className="text-sm text-gray-600 mb-2">Ready to transform your business?</p>
-                  <p className="text-xs text-gray-500">Contact us for a free consultation</p>
+                  <p className="text-sm text-gray-600 mb-2">Ready to simplify your business?</p>
+                  <p className="text-xs text-gray-500">Start with a Process Review</p>
                 </motion.div>
               </motion.div>
             </div>

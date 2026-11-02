@@ -12,23 +12,23 @@ const About = () => {
   const features = [
     {
       icon: Lightbulb,
-      title: 'Advisory',
-      description: 'Drive enterprise growth through strategic, business, and technology advisory across process redesign and digital transformation.',
+      title: 'Process Design',
+      description: 'We map how work really flows today, then design a simpler process with fewer steps, clear owners, and KPIs your teams can track.',
     },
     {
       icon: Bot,
-      title: 'Agentic AI',
-      description: 'Design, deploy, and orchestrate autonomous AI agents that handle complex tasks and streamline business processes.',
+      title: 'AI Agents',
+      description: 'AI agents take on discovery, documentation, test scripts, and routine process tasks, so your teams finish work sooner.',
     },
     {
       icon: Sparkles,
-      title: 'Generative AI',
-      description: 'Deliver enterprise grade generative AI solutions that accelerate innovation, enhance decision making, and transform business processes at scale.',
+      title: 'SAP S/4HANA',
+      description: 'Each process is redesigned to fit SAP standard and a clean core, so future upgrades take less effort and new SAP features reach your teams sooner.',
     },
     {
       icon: Workflow,
-      title: 'Process Automation',
-      description: 'Streamline operations with robotic process automation templates that reduce costs and eliminate manual errors.',
+      title: 'Measured Results',
+      description: 'We set baseline KPIs at the start, then track cost, cycle time, and error rates through go live and beyond.',
     },
   ];
 
@@ -52,7 +52,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A237E] mb-6"
           >
-            Who We Are
+            Why Zennero
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
@@ -72,19 +72,19 @@ const About = () => {
           >
             {/* "Empowering Business..." — black heading → navy */}
             <h3 className="text-2xl sm:text-3xl font-bold text-[#1A237E]">
-              Empowering Business Success Through Innovation
+              Simpler Processes Create Better Business Results
             </h3>
             {/* Body paragraphs — gray text unchanged */}
             <p className="text-lg text-gray-600 font-source-sans leading-relaxed">
-              In today&apos;s business landscape, utilizing data can be a powerful tool for gaining insights
-              and making informed decisions that can help take operations to the next level.
+              Complex processes slow decisions, raise costs, and make every system change harder.
+              Most of that complexity hides in extra steps, manual handoffs, and old workarounds.
             </p>
             <p className="text-lg text-gray-600 font-source-sans leading-relaxed">
-              At Zennero, we specialize in helping businesses optimize their operations, reduce costs,
-              and improve efficiency by leveraging the power of AI, ML, and data. With a
-              global team of professionals focused on business advisory, process innovation, and
-              technology services, we offer tailored solutions to meet the specific needs of businesses
-              looking to take their operations to higher ground.
+              Zennero brings 30+ years of business process and engineering experience to remove that
+              complexity. We map how work really flows, design a simpler version with clear owners and
+              measures, and use AI tools and agents to speed up analysis, documentation, and testing.
+              For a large grocery and convenience retailer, the result was 40% fewer process steps and a
+              business ready for SAP S/4HANA.
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -95,7 +95,7 @@ const About = () => {
                 href="#contact"
                 className="inline-flex items-center bg-zennero-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-zennero-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Let&apos;s Work Together
+                Book a Process Review
               </a>
             </motion.div>
           </motion.div>

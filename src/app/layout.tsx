@@ -2,9 +2,14 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Zennero',
-  description: 'Empowering enterprise success through strategic advisory, agentic AI, generative AI, and intelligent process automation. Zennero transforms your business with data-driven solutions.',
-  keywords: 'business advisory, process automation, agentic AI, generative AI, SAP implementation, digital transformation, talent acquisition, technology services, enterprise solutions',
+  // Absolute base for og:image and twitter:image. Without it, Next.js falls back to http://localhost:3000.
+  metadataBase: new URL('https://zennero.com'),
+  title: 'Zennero | Process Simplification, AI Agents, and SAP S/4HANA',
+  description: 'Zennero simplifies business processes with proven expertise and AI agents, then moves them to SAP S/4HANA: Greenfield, Brownfield, or Lift and Shift.',
+  keywords: 'business process simplification, SAP S/4HANA, Greenfield, Brownfield, Lift and Shift, RISE with SAP, clean core, AI agents, MCP server, SAP Joule, SAP Signavio, staff augmentation, retail',
+  alternates: {
+    canonical: '/',
+  },
   authors: [{ name: 'Zennero' }],
   icons: {
     icon: [
@@ -16,8 +21,8 @@ export const metadata: Metadata = {
     shortcut: '/logos/ZLogo_Orange.png',
   },
   openGraph: {
-    title: 'Zennero',
-    description: 'Empowering enterprise success through strategic advisory, agentic AI, and intelligent process automation.',
+    title: 'Zennero | Process Simplification, AI Agents, and SAP S/4HANA',
+    description: 'Simpler business processes, sped up by AI and ready for SAP S/4HANA.',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -31,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Zennero',
-    description: 'Empowering enterprise success through strategic advisory, agentic AI, and intelligent process automation.',
+    title: 'Zennero | Process Simplification, AI Agents, and SAP S/4HANA',
+    description: 'Simpler business processes, sped up by AI and ready for SAP S/4HANA.',
   },
 };
 

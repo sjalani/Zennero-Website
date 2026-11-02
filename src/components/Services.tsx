@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import {
   Users,
@@ -27,7 +27,7 @@ type ServiceType = {
   fullDescription: string;
   detailedContent?: string;
   highlight?: string;
-  featuresLabel: string;
+  featuresLabel?: string;
   features?: string[];
   techStack?: string[];
 };
@@ -37,69 +37,63 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [selectedService, setSelectedService] = useState<ServiceType | null>(null);
 
+  // Content per Zennero website change file v2.1 (sections 4.5 and 7, O1 option B icons)
   const services: ServiceType[] = [
     {
       icon: BarChart3,
-      title: 'Process Advisory',
-      shortDescription: 'Industry domain expertise and business process optimization.',
-      keyPoints: ['Domain knowledge', 'Process optimization', 'Strategic decisions'],
-      fullDescription: 'Deep knowledge of various industry domains and business process optimization to help you make informed strategic decisions and improve operational efficiency.',
-      features: ['Business Process Analysis', 'Strategic Consulting', 'Operational Efficiency', 'Industry Best Practices'],
-      featuresLabel: 'Advisory Services',
-    },
-    {
-      icon: Users,
-      title: 'Talent Acquisition for Customers',
-      shortDescription: 'Staff augmentation and talent acquisition services tailored for large and medium-sized businesses.',
-      keyPoints: ['Skilled professionals', 'Seamless integration', 'Precision and efficiency'],
-      fullDescription: 'At Zennero, we excel in staff augmentation and talent acquisition services, tailored to meet the unique needs of large and medium-sized businesses. Our expertise lies in providing highly skilled professionals who seamlessly integrate into your team, ensuring that your projects are executed with precision and efficiency.',
-      detailedContent: 'Whether you need specialized process expert, technical talent, project managers, or creative skills, we have the resources to fill your skill gaps quickly and effectively. Our rigorous vetting process ensures that every candidate not only possesses the required skills but also aligns with your company culture and values. With our flexible engagement models, you can scale your team, optimize your workforce, and drive your business forward. Trust us to provide the talent you need to succeed.',
-      highlight: 'Seamlessly integrate into your team',
-      featuresLabel: 'Our Approach',
-    },
-    {
-      icon: Network,
-      title: 'Connecting People to Customers',
-      shortDescription: 'Connect top-tier professionals with exciting opportunities at businesses.',
-      keyPoints: ['Career opportunities', 'Skill matching', 'Growth-focused'],
-      fullDescription: 'At Zennero, we connect top-tier professionals with exciting opportunities at large and medium-sized businesses. Our staff augmentation and talent acquisition services are designed to offer you a fulfilling career path, where your skills and expertise are highly valued.',
-      detailedContent: 'Whether you specialize in process re-engineering, technical roles or project management, we have the right opportunities to match your aspirations. With flexible engagement models, you can take on projects that challenge you, providing the growth opportunities you need to thrive.',
-      highlight: 'Fulfilling career paths',
-      featuresLabel: 'Career Benefits',
+      title: 'Process Simplification',
+      shortDescription: 'Remove extra steps, handoffs, and workarounds that add cost.',
+      keyPoints: ['Process discovery', 'Fewer steps and handoffs', 'Clear owners and KPIs'],
+      fullDescription: 'Years of process and engineering experience show us where work slows down and costs grow. For a large grocery and convenience retailer, our redesign cut process steps by 40%.',
+      features: ['Current process map', 'Simplified future process', 'KPIs and business case', 'Adoption and change plan'],
+      featuresLabel: 'What You Get',
     },
     {
       icon: Database,
-      // & → and in title
-      title: 'SAP Implementation and Support',
-      shortDescription: 'Expert implementation and support for SAP systems across industries.',
-      keyPoints: ['SAP S/4 HANA', 'Industry expertise', 'Clean Core Concept'],
-      // Updated fullDescription per change request
-      fullDescription: 'Expertise in implementing and supporting SAP systems such as SAP S/4 HANA, BTP, SAP Business Cloud, Fiori, RISE and GROW, Clean Core Concept. We have senior level experts in industries such as Retail, CAR, Oil and Gas, and Pharma',
-      // & → and in features
-      features: ['SAP Implementation', 'System Support and Maintenance', 'Industry-Specific Solutions', 'Clean Core Migration'],
-      // & → and in techStack
-      techStack: ['SAP S/4 HANA', 'BTP', 'SAP Business Cloud', 'Fiori', 'RISE and GROW'],
-      featuresLabel: 'SAP Capabilities',
+      title: 'SAP S/4HANA Process Readiness',
+      shortDescription: 'We review every process, fit it to SAP standard, and cut custom code before your move to S/4HANA.',
+      keyPoints: ['Fit to standard review', 'Clean core design', 'Less custom code'],
+      fullDescription: 'Moving a complex process to SAP S/4HANA only moves the complexity. We review each business process with your process owners, compare it to SAP standard and best practice, and decide what to keep, simplify, or retire. Our proprietary MCP server and LLM, together with SAP Signavio, speed up the review of your current system, custom code, interfaces, data, and reports.',
+      detailedContent: 'You get a clear fit to standard plan: which processes run on SAP standard, which need extensions built the clean core way, and which custom objects can go. You also get a data cleanup list, a list of open decisions, a high level roadmap, and a business case your leadership can approve. This work lowers the cost and risk of any path you choose: Greenfield, Brownfield, or Lift and Shift. It also keeps future upgrades simpler and lets your teams adopt new SAP and AI features sooner.',
+      highlight: 'Fix the process before you move it',
     },
     {
-      icon: Code,
-      title: 'Technology Services',
-      shortDescription: 'Cutting-edge technology solutions for digital transformation.',
-      // & → and in keyPoints
-      keyPoints: ['AI and ML', 'API Development', 'Cloud and Blockchain'],
-      fullDescription: 'Comprehensive technology services to drive your digital transformation with modern solutions.',
-      features: ['AI, ML, LLMs, GenAI', 'API Development Microservices', 'Cloud', 'Blockchain'],
-      featuresLabel: 'Technology Stack',
+      icon: Network,
+      title: 'SAP S/4HANA Transformation',
+      shortDescription: 'Greenfield, Brownfield, or Lift and Shift, chosen by business value and risk.',
+      keyPoints: ['Greenfield', 'Brownfield', 'Lift and Shift'],
+      fullDescription: 'Greenfield builds a new SAP S/4HANA system around simplified processes and SAP standard. Brownfield converts your current SAP system and keeps your history and data. Lift and Shift moves your current system to the cloud first, so you can simplify later in planned, lower risk steps.',
+      detailedContent: 'We help you choose the path by business value, risk, cost, and timeline, then deliver it with SAP Activate, RISE with SAP, and a clean core. SAP ERP 6.0 mainstream maintenance ends at the end of 2027, so an early decision keeps more of your options, budget, and partner choices open.',
+      highlight: 'The right path for you',
     },
     {
       icon: Bot,
-      title: 'Process Automation',
-      shortDescription: 'Automate repetitive processes using RPA tools and intelligent automation.',
-      keyPoints: ['RPA Implementation', 'Workflow Optimization', 'Cost Reduction'],
-      fullDescription: 'We automate repetitive and time-consuming processes using RPA tools such as UiPath, AA, and MS PowerApps. Streamline operations with RPA templates and intelligent automation solutions.',
-      features: ['RPA Implementation', 'Workflow Optimization', 'Cost Reduction', 'Error Prevention'],
-      techStack: ['UiPath', 'Automation Anywhere', 'MS PowerApps'],
-      featuresLabel: 'Implementation Areas',
+      title: 'AI Agents for Everyday Process Work',
+      shortDescription: 'AI agents and automation speed up discovery, testing, and daily tasks.',
+      keyPoints: ['Faster discovery', 'Automated testing', 'Fewer manual tasks'],
+      fullDescription: 'We put AI tools and agents to work on the slow parts of process change and daily work: discovery, documentation, test scripts, data checks, and routine tasks. People stay in control, and every agent has a clear owner and measure.',
+      features: ['Process discovery', 'Documentation and test scripts', 'Data quality checks', 'Routine task automation'],
+      featuresLabel: 'Where AI Helps',
+      techStack: ['Claude', 'MCP Servers', 'Custom LLMs', 'RPA', 'SAP BTP', 'SAP Joule'],
+    },
+    {
+      icon: Code,
+      title: 'Ongoing Improvement',
+      shortDescription: 'Support after go live that keeps processes simple and stable.',
+      keyPoints: ['SAP application support', 'Continuous improvement', 'Process health checks'],
+      fullDescription: 'After go live, we keep processes stable, fix issues fast, and keep removing steps that add cost.',
+      features: ['SAP application support', 'Integration and APIs', 'Cloud operations', 'Continuous improvement'],
+      featuresLabel: 'Support Areas',
+    },
+    {
+      icon: Users,
+      title: 'Resources on Demand',
+      shortDescription: 'Skilled process, SAP, and project experts ready to join your team quickly.',
+      keyPoints: ['Skilled professionals', 'Flexible engagement', 'Careers at Zennero'],
+      fullDescription: 'Staff augmentation and talent acquisition for large and midsize businesses. Skilled professionals join your team and help deliver your projects with precision and efficiency. Experts looking for their next role can reach us too.',
+      features: ['Process and SAP experts', 'Project managers', 'Technical specialists', 'Flexible engagement'],
+      featuresLabel: 'For Your Projects',
+      techStack: ['SAP S/4HANA', 'SAP BTP', 'Process Automation'],
     },
   ];
 
@@ -129,7 +123,7 @@ const Services = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A237E] mb-6"
           >
-            Our Services
+            What We Deliver
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
@@ -144,8 +138,8 @@ const Services = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-3xl mx-auto font-source-sans"
           >
-            From talent acquisition to strategic advisory, we provide
-            comprehensive services to optimize your operations and drive business success
+            Every engagement starts with a business outcome you can measure, then uses
+            process design, AI agents, and SAP S/4HANA to reach it.
           </motion.p>
         </motion.div>
 
@@ -248,20 +242,28 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {/* Modal */}
-      <AnimatePresence>
-        {selectedService && (
+      {/* Modals: all six stay in the page HTML so search engines can read them.
+          Only the open one is visible; closed ones are hidden, inert, and take no clicks. */}
+      {services.map((service) => {
+        const isOpen = selectedService?.title === service.title;
+        const ModalIcon = service.icon;
+        return (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            key={`modal-${service.title}`}
+            initial={{ opacity: 0, visibility: 'hidden' }}
+            animate={
+              isOpen
+                ? { opacity: 1, visibility: 'visible' }
+                : { opacity: 0, transitionEnd: { visibility: 'hidden' } }
+            }
+            aria-hidden={!isOpen}
+            inert={!isOpen}
+            className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 ${isOpen ? '' : 'pointer-events-none'}`}
             onClick={() => setSelectedService(null)}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={isOpen ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 20 }}
               className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto overflow-x-hidden"
               onClick={(e) => e.stopPropagation()}
             >
@@ -270,16 +272,16 @@ const Services = () => {
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-16 h-16 bg-zennero-primary/10 rounded-2xl flex items-center justify-center">
-                      <selectedService.icon size={32} className="text-zennero-primary" />
+                      <ModalIcon size={32} className="text-zennero-primary" />
                     </div>
                     <div className="ml-8">
                       {/* Modal title — black heading → navy */}
                       <h3 className="text-2xl font-bold text-[#1A237E] mb-2">
-                        {selectedService.title}
+                        {service.title}
                       </h3>
-                      {selectedService.highlight && (
+                      {service.highlight && (
                         <div className="inline-flex items-center bg-zennero-primary/10 text-zennero-primary px-3 py-1 rounded-full text-sm font-medium">
-                          {selectedService.highlight}
+                          {service.highlight}
                         </div>
                       )}
                     </div>
@@ -300,23 +302,23 @@ const Services = () => {
                 <div className="space-y-6">
                   {/* Body paragraphs — gray text unchanged */}
                   <p className="text-gray-700 leading-relaxed">
-                    {selectedService.fullDescription}
+                    {service.fullDescription}
                   </p>
 
-                  {selectedService.detailedContent && (
+                  {service.detailedContent && (
                     <p className="text-gray-700 leading-relaxed">
-                      {selectedService.detailedContent}
+                      {service.detailedContent}
                     </p>
                   )}
 
-                  {selectedService.features && (
+                  {service.features && (
                     <div>
                       {/* Section subheading — black heading → navy */}
                       <h4 className="text-lg font-semibold text-[#1A237E] mb-3">
-                        {selectedService.featuresLabel || 'Key Features'}
+                        {service.featuresLabel || 'Key Features'}
                       </h4>
                       <ul className="space-y-2">
-                        {selectedService.features.map((feature) => (
+                        {service.features.map((feature) => (
                           <li key={feature} className="flex items-center text-gray-700">
                             <CheckCircle size={18} className="text-zennero-primary mr-3 flex-shrink-0" />
                             {feature}
@@ -326,12 +328,12 @@ const Services = () => {
                     </div>
                   )}
 
-                  {selectedService.techStack && (
+                  {service.techStack && (
                     <div>
                       {/* "Technologies" subheading — black heading → navy */}
                       <h4 className="text-lg font-semibold text-[#1A237E] mb-3">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedService.techStack.map((tech) => (
+                        {service.techStack.map((tech) => (
                           <span key={tech} className="bg-zennero-primary/10 text-zennero-primary px-3 py-1 rounded-lg text-sm font-medium">
                             {tech}
                           </span>
@@ -358,8 +360,8 @@ const Services = () => {
               </div>
             </motion.div>
           </motion.div>
-        )}
-      </AnimatePresence>
+        );
+      })}
     </section>
   );
 };

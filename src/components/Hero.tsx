@@ -4,12 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+// Headline 1 is the only one in the page HTML, so keep it first.
+// Each headline must stay on two lines at 1440, 1024, 768, and 375 px (change file 8.4).
 const quotes = [
-  "Your Partner for Strategy, Automation, and Innovation",
-  "Transforming Vision Into Intelligent Enterprise Solutions",
-  "Where Business Strategy Becomes Digital Reality",
-  "Guiding Strategy, Accelerating Growth",
-  "Engineering the Future of Enterprise Transformation",
+  "Simpler Processes. Better Outcomes.",
+  "Simplify First. Then S/4HANA.",
+  "Process Expertise, Sped Up by AI",
+  "The Right Path to SAP S/4HANA",
+  "Faster Value from Every Process",
 ];
 
 const Hero = () => {
@@ -89,8 +91,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-source-sans"
           >
-            Empowering your success with actionable strategy, data-driven optimization,
-            and cutting-edge solutions that transform your business
+            We simplify how your business runs, use AI agents to speed up daily work,
+            and prepare every process for SAP S/4HANA with lower risk.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -107,7 +109,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               className="group bg-zennero-primary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 hover:bg-zennero-primary-dark transition-all duration-300 shadow-lg"
             >
-              Get Started Today
+              Talk to an Expert
               <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <ArrowRight size={20} />
               </motion.div>
@@ -120,7 +122,7 @@ const Hero = () => {
               className="group border-2 border-zennero-primary text-zennero-primary px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 hover:bg-zennero-primary hover:text-white transition-all duration-300"
             >
               <Play size={20} />
-              Learn More
+              How We Work
             </motion.a>
           </motion.div>
 
@@ -133,8 +135,8 @@ const Hero = () => {
           >
             {[
               { number: '20+', label: 'Projects Delivered' },
-              { number: '15+', label: 'Happy Clients' },
-              { number: '24/7', label: 'Support Available' },
+              { number: '15+', label: 'Clients Served' },
+              { number: '30+', label: 'Years of Expertise' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
