@@ -42,6 +42,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* The fixed header sits 16px from the top and is about 82px tall (bottom near 98px).
+     Sections have 80px top padding, so stopping 48px short places each section
+     heading about 30px below the header when a menu link or button jumps to it. */
+  scroll-padding-top: 48px;
 }
 
 @media (prefers-reduced-motion: reduce) {
