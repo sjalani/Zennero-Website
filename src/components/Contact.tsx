@@ -51,7 +51,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A237E] mb-6"
           >
-            Let&apos;s Work Together
+            Let&apos;s Talk Outcomes
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
@@ -66,8 +66,8 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-4xl mx-auto font-source-sans"
           >
-            We are here to help your business grow by providing strategic business advisory and technology solutions tailored to your specific needs.
-            Our team of experts is passionate about leveraging emerging technologies to drive digital transformation and organic growth in enterprise.
+            Tell us which process costs you the most time or money. We will show you how to simplify it, where AI agents can help, and what the change means for your SAP S/4HANA plans.
+            You get a clear, honest view of the effort, the risk, and the business value before you commit any budget.
           </motion.p>
         </motion.div>
 
@@ -82,14 +82,14 @@ const Contact = () => {
               <div>
                 {/* "Ready to Transform..." — black heading → navy */}
                 <h3 className="text-2xl font-bold text-[#1A237E] mb-6">
-                  Ready to Transform Your Business?
+                  Ready to Simplify Your Business?
                 </h3>
                 {/* Body paragraphs — gray text unchanged */}
                 <p className="text-lg text-gray-600 font-source-sans leading-relaxed mb-6">
-                  We would love to hear from you about your business and technology needs. Whether you are looking to streamline your processes, improve customer engagement, need professional talent, or optimize your operations, we are here to help.
+                  Whether you are planning an SAP S/4HANA move, fixing a slow or costly process, adding AI agents to daily work, or need skilled experts for a project, we start with your business goals and work back from there to the right answer.
                 </p>
                 <p className="text-lg text-gray-600 font-source-sans leading-relaxed mb-8">
-                  Our solutions are designed to help businesses of all sizes and industries, and we are committed to providing personalized service to each of our customers. Think smartly about your technology investments.
+                  We work with companies of all sizes in retail, manufacturing, oil and gas, and pharma. Every engagement has agreed outcomes, a clear plan, named owners, and regular progress checks with your leaders.
                 </p>
               </div>
               <div className="hidden md:block">
@@ -143,19 +143,19 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 1 }}
               className="bg-gradient-to-r from-zennero-primary to-zennero-accent rounded-2xl p-8 text-white"
             >
-              <h4 className="text-xl font-bold mb-4">So Why Wait?</h4>
+              <h4 className="text-xl font-bold mb-4">Start With One Process</h4>
               <p className="text-white/90 mb-6 leading-relaxed">
-                Reach out to us today to schedule a consultation and learn more about how we can help your business succeed.
-                Join hundreds of businesses that have transformed their operations with our innovative technology solutions.
+                Our Process Review covers one process, with a fixed scope and a readout at the end.
+                We show where steps and cost can come out, and outline a practical path to SAP S/4HANA and AI agents that fits both your budget and your timeline.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.a
-                  href="mailto:info@zennero.com"
+                  href="mailto:info@zennero.com?subject=Process%20Review%20request"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-zennero-primary px-6 py-3 rounded-lg font-semibold text-center hover:shadow-lg transition-all duration-300"
                 >
-                  Schedule a Consultation
+                  Book a Process Review
                 </motion.a>
                 <motion.a
                   href="tel:+19728005552"

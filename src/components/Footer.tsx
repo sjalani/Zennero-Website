@@ -18,12 +18,12 @@ const Footer = () => {
 
   // Updated services list — static text, no links
   const services = [
-    'Process Advisory',
-    'Talent Acquisition for Customers',
-    'Connecting People to Customers',
-    'SAP Implementation and Support',
-    'Technology Services',
-    'Process Automation',
+    'Process Simplification',
+    'SAP S/4HANA Process Readiness',
+    'SAP S/4HANA Transformation',
+    'AI Agents for Everyday Process Work',
+    'Ongoing Improvement',
+    'Resources on Demand',
   ];
 
   // Updated industries list — static text, no links, & → and, CPG/Healthcare/Financial removed
@@ -76,7 +76,7 @@ const Footer = () => {
                 </div>
                 {/* Updated description text — no period at end */}
                 <p className="text-white/80 leading-relaxed font-source-sans">
-                  Empowering your success with actionable strategy, data-driven optimization, and cutting-edge solutions that transform your business
+                  We simplify business processes, use AI agents to speed up the work, and prepare companies for SAP S/4HANA with less cost and risk.
                 </p>
               </div>
 

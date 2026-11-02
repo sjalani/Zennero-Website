@@ -210,7 +210,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm Zennero's AI assistant. How can I help you with your IT solutions today?",
+      text: "Hi! I'm Zennero's AI assistant. Which business process would you like to simplify?",
       isUser: false,
       timestamp: new Date()
     }
@@ -243,7 +243,7 @@ const ChatBot = () => {
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: "Thank you for your message! Our AI is currently being enhanced. For immediate assistance, please contact us at info@zennero.com or use the contact form above.",
+        text: "Thanks for your message. This assistant is still in testing and cannot answer yet. Please email info@zennero.com or call +1 972-800-5552, and our team will get back to you.",
         isUser: false,
         timestamp: new Date()
       };
